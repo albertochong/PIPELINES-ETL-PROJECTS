@@ -23,7 +23,7 @@ sudo tar xvzf streamsets-datacollector-core-3.13.0.tgz
 
 * move to folder opt/streamsets and change owner to group and user hadoop
 ```bash
-sudo mv streamsets-datacollector-core-3.13.0.tgz/ /opt/streamsets
+sudo mv streamsets-datacollector-core-3.13.0/ /opt/streamsets
 ```
 
 * To start streamsets go to instalation folder 
@@ -47,3 +47,4 @@ sudo nano /etc/security/limits.conf
 
 ## My environment 
 ###  http://ec2-3-21-124-86.us-east-2.compute.amazonaws.com:18630/
+* If you are interested to try this tool email me to beto.chong@gmail.com and I grant access and we can share pipelines and knwoledge
