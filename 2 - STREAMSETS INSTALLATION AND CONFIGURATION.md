@@ -23,7 +23,7 @@ sudo tar xvzf streamsets-datacollector-core-3.13.0.tgz
 
 * move to folder opt/streamsets and change owner to group and user hadoop
 ```bash
-sudo mv streamsets-datacollector-core-3.13.0/ /opt/streamsets
+sudo mv streamsets-datacollector-3.13.0/  /opt/streamsets
 ```
 
 * To start streamsets go to instalation folder 
