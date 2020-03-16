@@ -26,9 +26,9 @@ sudo tar xvzf streamsets-datacollector-core-3.13.0.tgz
 sudo mv streamsets-datacollector-3.13.0/  /opt/streamsets
 ```
 
-* To start streamsets go to instalation folder 
+* To start in background streamsets go to instalation folder 
 ```bash
-bin/streamsets dc
+nohup bin/streamsets dc &
 ```
 
 * You will probably het this error
@@ -62,5 +62,5 @@ systemctl enable sdc
 service sdc status
 
 ## My environment 
-###  http://ec2-3-21-124-86.us-east-2.compute.amazonaws.com:18630/
+###  http://ec2-3-19-103-254.us-east-2.compute.amazonaws.com:18630/
 * If you are interested to try this tool email me to beto.chong@gmail.com and I grant access and we can share pipelines and knwoledge
