@@ -1,4 +1,4 @@
-# APACHE-ETL-PROJECTS
+# ETL-PROJECTS
 Create ETL projects with some tools like Apache NIFi and Streamsets hosted on AWS machine
 
 
