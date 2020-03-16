@@ -9,7 +9,7 @@ and handle data drift using a modern approach to data engineering and integratio
 ![alt text](https://achong.blob.core.windows.net/gitimages/StreamSets.PNG)
 
 
-### Run in terminal(NameNode or another server) with user hadoop
+### Run in terminal
 
 * Download streamsets under home/user directory. Check if java 1.8 is installed, if not you should install first
 ```bash
@@ -18,16 +18,32 @@ sudo wget https://archives.streamsets.com/datacollector/3.13.0/tarball/streamset
 
 * unpack files
 ```bash
-sudo tar -xzf streamsets-datacollector-core-3.13.0.tgz 
+sudo tar xvzf streamsets-datacollector-core-3.13.0.tgz 
 ```
 
 * move to folder opt/streamsets and change owner to group and user hadoop
 ```bash
 sudo mv streamsets-datacollector-core-3.13.0.tgz/ /opt/streamsets
-sudo chown -R hadoop:hadoop streamsets/
 ```
 
-* To start streamsets go to instalation folder
+* To start streamsets go to instalation folder 
 ```bash
 bin/streamsets dc
 ```
+
+* You will probably het this error
+```bash
+Configuration of maximum open file limit is too low: 1024 (expected at least 32768). Please consult https://goo.gl/6dmjXd
+```
+
+* To solve this problemn open the file and add 2 lines and then reboot the server and start steamset again
+```bash
+sudo nano /etc/security/limits.conf
+--add this two lines
+*      soft    nofile  32768
+*      hard    nofile  32768
+
+```
+
+## My environment 
+###  http://ec2-3-21-124-86.us-east-2.compute.amazonaws.com:18630/
