@@ -1,5 +1,5 @@
-# ETL-PROJECTS
-Create ETL projects with some tools like Apache NIFi and Streamsets hosted on AWS machine
+# DATA PIPELINES -PROJECTS
+Create data pipelines and ETL projects with some tools like Apache NIFi and Streamsets hosted on AWS machine
 
 
 ## Create 1 Instance (t2.Xlarge) with the options
