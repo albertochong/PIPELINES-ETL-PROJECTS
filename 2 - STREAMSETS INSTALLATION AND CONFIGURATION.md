@@ -14,6 +14,8 @@ and handle data drift using a modern approach to data engineering and integratio
 * Download streamsets under home/user directory. Check if java 1.8 is installed, if not you should install first
 ```bash
 sudo wget https://archives.streamsets.com/datacollector/3.13.0/tarball/streamsets-datacollector-core-3.13.0.tgz
+
+https://s3-us-west-2.amazonaws.com/archives.streamsets.com/datacollector/3.13.0/rpm/el7/streamsets-datacollector-3.13.0-el7-all-rpms.tar
 ```
 
 * unpack files
@@ -44,6 +46,22 @@ sudo nano /etc/security/limits.conf
 *      hard    nofile  32768
 
 ```
+
+cp systemd/sdc.service /etc/systemd/system/sdc.service
+cp systemd/sdc.socket /etc/systemd/system/sdc.socket
+groupadd -r sdc && useradd -r -d /opt/streamsets -g sdc -s /sbin/nologin sdc
+mkdir /etc/sdc
+chown -R sdc:sdc /etc/sdc
+mkdir /var/log/sdc
+chown sdc:sdc /var/log/sdc
+mkdir /var/lib/sdc
+chown sdc:sdc /var/lib/sdc
+mkdir /var/lib/sdc-resources
+chown sdc:sdc /var/lib/sdc-resources
+systemctl daemon-reload
+systemctl start sdc
+systemctl enable sdc
+service sdc status
 
 ## My environment 
 ###  http://ec2-3-21-124-86.us-east-2.compute.amazonaws.com:18630/
