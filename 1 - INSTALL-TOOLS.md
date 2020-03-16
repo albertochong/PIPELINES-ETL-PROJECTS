@@ -50,10 +50,7 @@ sudo tar xzf java_package_name
 ```bash 
 sudo mv jdk1.8.0_221/ /opt/jdk
 ```
-*  adjust previleges
-```bash 
-sudo chown -R root:root jdk
-```
+
 *  Edit .bashrc Under home/user directory to create envirnoment variable for java and add
 ```bash 
 nano .bashrc
