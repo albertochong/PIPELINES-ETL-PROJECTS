@@ -45,22 +45,6 @@ sudo nano /etc/security/limits.conf
 
 ```
 
-cp systemd/sdc.service /etc/systemd/system/sdc.service
-cp systemd/sdc.socket /etc/systemd/system/sdc.socket
-groupadd -r sdc && useradd -r -d /opt/streamsets -g sdc -s /sbin/nologin sdc
-mkdir /etc/sdc
-chown -R sdc:sdc /etc/sdc
-mkdir /var/log/sdc
-chown sdc:sdc /var/log/sdc
-mkdir /var/lib/sdc
-chown sdc:sdc /var/lib/sdc
-mkdir /var/lib/sdc-resources
-chown sdc:sdc /var/lib/sdc-resources
-systemctl daemon-reload
-systemctl start sdc
-systemctl enable sdc
-service sdc status
-
 ## My environment 
 ###  http://ec2-3-19-103-254.us-east-2.compute.amazonaws.com:18630/
 * If you are interested to try this tool email me to beto.chong@gmail.com and I grant access and we can share pipelines and knwoledge
