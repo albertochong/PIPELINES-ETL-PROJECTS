@@ -26,7 +26,7 @@ sudo tar xvzf streamsets-datacollector-core-3.13.0.tgz
 sudo mv streamsets-datacollector-3.13.0/  /opt/streamsets
 ```
 
-* To start in background streamsets go to instalation folder 
+* To start in background streamsets go to instalation folder. We can put as servcice 
 ```bash
 nohup bin/streamsets dc &
 ```
