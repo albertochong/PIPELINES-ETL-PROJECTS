@@ -25,21 +25,20 @@ SSH               TCP             22          Anywhere
 ## 1. Step: Install some tools
   * Install wget
   * Install nano
-  * Install SSH
   * Install Java
 
 ## 2. Step: StreamSet Installation and Configuration
   * Install and Configure Streamsets 
   
 ### 2.1 Step: Working with STREAMSETS
-  *  
+  * Create new user for based 
   * 
   *  
   
 ## 3. Step: Apache NIFI Installation and Configuration
   * Install and Configure NIFI 
   
-### 2.1 Step: Working with NIFI
+### 3.1 Step: Working with NIFI
   *  
   * 
   *
