@@ -47,4 +47,7 @@ sudo nano /etc/security/limits.conf
 
 ## My environment 
 ###  http://ec2-3-19-103-254.us-east-2.compute.amazonaws.com:18630/
+
+![alt text](https://achong.blob.core.windows.net/gitimages/streamsetpanel.PNG)
+
 * If you are interested to try this tool email me to beto.chong@gmail.com and I grant access and we can share pipelines and knwoledge
