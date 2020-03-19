@@ -31,7 +31,7 @@ SSH               TCP             22          Anywhere
   * Install and Configure Streamsets 
   
 ### 2.1 Step: Working with STREAMSETS
-  * Create new user for based 
+  * Create new user form based 
   * 
   *  
   
