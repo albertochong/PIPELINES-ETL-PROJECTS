@@ -5,5 +5,7 @@ The goal of this tutorial is read json files from a Rest APi(about Lisbon Area B
 
 ### Prerequisites
 
+* Rest APi source - https://carris.tecmic.com/index.html
 * A working instance of StreamSets Data Collector
-* A working Confluent Kafka instance (see the [My Kafka tutorial](https://github.com/albertochong/AWS-KAFKA-CONFLUENT-PLATFORM) for easy local setup)
+* A working Confluent Kafka instance (see the [My Confluent Kafka tutorial](https://github.com/albertochong/AWS-KAFKA-CONFLUENT-PLATFORM) for easy local setup).
+* Amazon S3 account
