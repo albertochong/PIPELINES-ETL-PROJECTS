@@ -1,3 +1,9 @@
-# Simple Pipeline using StreamSets Data Collector, kafka and KSQL
+# Simple Pipeline using StreamSets Data Collector, Rest Api, Amazon S3, kafka and KSQL
 Creating custom Kafka producers and consumers is often a tedious process that requires manual coding. In this tutorial, we'll see how to use StreamSets Data Collector to create data ingest pipelines to get data from Rest Api and write to Kafka using a Kafka Producer, and read from Kafka with a KSQL queries streams.
-Rest Api is about data from Lisbon Area Bus status 
+
+The goal of this tutorial is read json files from a Rest APi(about Lisbon Area Bus status near real time) and write them to a Kafka topic using the StreamSets Kafka Producer. We'll then use a KSQL to run queries streams to get .
+
+### Prerequisites
+
+* A working instance of StreamSets Data Collector
+* A working Confluent Kafka instance (see the [GitHub Pages](https://pages.github.com/) for easy local setup.
