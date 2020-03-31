@@ -35,7 +35,6 @@ SSH               TCP             22          Anywhere
   * 
   *  
   
-PIPELINE-LISBON-BUS-STATUS  
 ## 3. Step: PIPELINE-LISBON-BUS-STATUS
   * Install and Configure Streamsets 
   
