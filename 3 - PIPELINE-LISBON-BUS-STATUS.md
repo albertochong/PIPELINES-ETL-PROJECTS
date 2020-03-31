@@ -21,3 +21,7 @@ Creating custom Kafka producers and consumers is often a tedious process that re
 
 ![alt text](https://achong.blob.core.windows.net/gitimages/pipeline_Get_Lisbom_Bus_Status_to_Kafka.PNG)
 
+## Part 2 - Spark with Databricks processing
+
+### Creating a Job
+* NOT FINISHED
