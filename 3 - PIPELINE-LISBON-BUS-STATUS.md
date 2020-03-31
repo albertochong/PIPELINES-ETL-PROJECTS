@@ -4,7 +4,7 @@ Creating custom Kafka producers and consumers is often a tedious process that re
 ### Prerequisites
 
 * Rest APi source - https://carris.tecmic.com/index.html
-* A working instance of StreamSets Data Collector (see the [My Atreamsets tutorial](https://github.com/albertochong/PIPELINES-ETL-PROJECTS/blob/master/2%20-%20STREAMSETS%20INSTALLATION%20AND%20CONFIGURATION.md)
+* A working instance of StreamSets Data Collector (see the [My Streamsets tutorial](https://github.com/albertochong/PIPELINES-ETL-PROJECTS/blob/master/2%20-%20STREAMSETS%20INSTALLATION%20AND%20CONFIGURATION.md)
 * A working Confluent Kafka instance (see the [My Confluent Kafka tutorial](https://github.com/albertochong/AWS-KAFKA-CONFLUENT-PLATFORM) for easy local setup).
 * Amazon S3 account
 * Azure or AWS Databrciks account
