@@ -9,5 +9,15 @@ Creating custom Kafka producers and consumers is often a tedious process that re
 * Amazon S3 account
 * Azure or AWS Databrciks account
 
-### XXXXXXXX
-hdhdhdhdhdhhdhdhdhdhdhdh
+## Part 1 - Publishing to a Kafka Producer
+
+### Creating a Pipeline
+* Launch the Data Collector console and create a new pipeline.
+
+#### Defining the Source and Destination
+* Drag the Http Client origin stage, Kafka Producer and Amazon S3 detinations stages into your canvas.
+
+* Fill all relevant fields configurations.
+
+![alt text](https://achong.blob.core.windows.net/gitimages/pipeline_Get_Lisbom_Bus_Status_to_Kafka.PNG)
+
