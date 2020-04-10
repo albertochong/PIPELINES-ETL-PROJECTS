@@ -36,12 +36,15 @@ SSH               TCP             22          Anywhere
   *  
   
 ## 3. Step: PIPELINE-LISBON-BUS-STATUS
-  * Install and Configure Streamsets 
+  * Simple Pipeline using StreamSets Data Collector, Rest Api, Amazon S3, Azure Databricks
   
-## 4. Step: Apache NIFI Installation and Configuration
-  * Install and Configure NIFI 
+## 4. Step : PIPELINE-LISBON-BUS-ALERTS 
+  * Simple Pipeline using KSQL and rest API to send alerts to whatsapp
   
-### 4.1 Step: Working with NIFI
+## 5. Step: Apache NIFI Installation and Configuration
+  * 
+  
+### 5.1 Step: Working with NIFI
   *  
   * 
   *
