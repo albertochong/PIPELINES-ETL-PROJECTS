@@ -88,6 +88,6 @@ namespace WebApiWhatsapp.Controllers
 ## Part 3 - Starting Streamsets pipeline to write streamns to kafka topic
 
 ### (see the [Pipeline tutorial](https://github.com/albertochong/PIPELINES-ETL-PROJECTS/blob/master/3%20-%20PIPELINE-LISBON-BUS-STATUS.md) for easy comphreension)
-[![Watch the video](https://photos.app.goo.gl/C2sGwkQJpNE5zpaK8)
+[![Watch the video](https://achong.blob.core.windows.net/gitimages/VID_20200422_183303.mp4)
 
 
