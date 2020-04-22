@@ -1,24 +1,84 @@
 # Simple Pipeline using KSQL, KAFKA Sink connector and Rest Api
-In this tutorial, we'll see how to use KSQL to to get data from joined Streamns and create new topic with enriched data and write sink connector to send this data to Rest Api who send alert to whatsapp number when one bus is arrived to one predefined bustops store in Ktable .
+In this tutorial, we'll see how to use KSQL to to get data from joined Streamns and create new topic with enriched data and write sink connector to send this data to Rest Api who send alert to users whatsapp numbers when:
+
+1 - one busNumber is arrived to one predefined bustop configured in Ktable.Exampe:users want to know when the bus is one Stop before their stop and receive alert from whatsapp to leave home and get this bus
+
+2 - speed from bus is above limit
 
 ### Prerequisites
 
 * A working Confluent Kafka instance (see the [My Confluent Kafka tutorial](https://github.com/albertochong/AWS-KAFKA-CONFLUENT-PLATFORM) for easy local setup and topics creation).
-* Rest Api
+* c# Rest Api 
 
-## Part 1 - Publishing to a Kafka Producer
+## Part 1 - Create Web Api to send alerts to whatsapp numbers
 
-### Creating a Pipeline
-* Launch the Data Collector console and create a new pipeline.
+### Using Visual Studio, Twillio(provider to send message to whatsapp) and azure account to publish Web Api
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Text;
+using System.Web.Http;
+using Twilio;
+using Twilio.Rest.Api.V2010.Account;
 
-#### Defining the Source and Destination
-* Drag the **Http Client** origin stage, **Kafka Producer** and **Amazon S3** detinations stages into your canvas.
+namespace WebApiWhatsapp.Controllers
+{
+    public class WhatsappController : ApiController
+    {
+        [HttpPost]
+        [Route("ChongWhatsappApi/PostNewMessage")]
+        public HttpResponseMessage PostNewMessage(string messagem)
+        {
+            //if (!ModelState.IsValid)
+            //    return BadRequest("Invalid data.");
 
-* Fill all relevant fields configurations.
 
-![alt text](https://achong.blob.core.windows.net/gitimages/pipeline_Get_Lisbom_Bus_Status_to_Kafka.PNG)
+            HttpResponseMessage response = null;
+
+            const string accountSid = "AC8195acfb522dc3ed922fa2acd004b918";
+            const string authToken = "8c302920c654880240eb12f3d952ed3e";
+
+            try
+            {
+                TwilioClient.Init(accountSid, authToken);
+
+                var message = MessageResource.Create(
+                    from: new Twilio.Types.PhoneNumber("whatsapp:+14155238886"),
+                    body: "Hello, there!",
+                    to: new Twilio.Types.PhoneNumber("whatsapp:+351964663133")
+                );
+
+                if (message.Sid != "")
+                {
+                    response = Request.CreateResponse(HttpStatusCode.OK);
+                    response.Content = new StringContent("Mensagem enviada com sucesso", Encoding.UTF8, "application/json");
+                }
+                else
+                {
+                    response = Request.CreateResponse(HttpStatusCode.NoContent);
+                    response.Content = new StringContent("Mensagem não enviada com sucesso", Encoding.UTF8, "application/json");
+                }
+            }
+            catch (Exception)
+            {
+                response = Request.CreateResponse(HttpStatusCode.InternalServerError);
+                response.Content = new StringContent("Ocorreu um erro no servidor", Encoding.UTF8, "application/json");
+            }
+
+            return response;
+        }
+    }
+}
+
+
+```
+
 
 ## Part 2 - Spark with Databricks processing
 
 ### Creating a Job
 * NOT FINISHED
+![alt text](https://achong.blob.core.windows.net/gitimages/pipeline_Get_Lisbom_Bus_Status_to_Kafka.PNG)
