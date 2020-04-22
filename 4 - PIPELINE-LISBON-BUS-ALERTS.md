@@ -32,14 +32,11 @@ namespace WebApiWhatsapp.Controllers
         [Route("ChongWhatsappApi/PostNewMessage")]
         public HttpResponseMessage PostNewMessage(string messagem)
         {
-            //if (!ModelState.IsValid)
-            //    return BadRequest("Invalid data.");
-
-
+           
             HttpResponseMessage response = null;
 
-            const string accountSid = "AC8195acfb522dc3ed922fa2acd004b918";
-            const string authToken = "8c302920c654880240eb12f3d952ed3e";
+            const string accountSid = "your twillio account";
+            const string authToken = "your twillio token";
 
             try
             {
@@ -75,10 +72,11 @@ namespace WebApiWhatsapp.Controllers
 
 
 ```
-
-
-## Part 2 - Spark with Databricks processing
-
-### Creating a Job
-* NOT FINISHED
+### Web Api published 
 ![alt text](https://achong.blob.core.windows.net/gitimages/pipeline_Get_Lisbom_Bus_Status_to_Kafka.PNG)
+
+
+## Part 2 - KSQL to get streams
+
+### Creating streams  from topic
+* NOT FINISHED
