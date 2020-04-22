@@ -1,5 +1,5 @@
-# Simple Pipeline using KSQL, KAFKA Sink connector and Rest Api
-In this tutorial, we'll see how to use KSQL to to get data from joined Streamns and create new topic with enriched data and write sink connector to send this data to Rest Api who send alert to users whatsapp numbers when:
+# Simple Kappa Architecture Pipeline using KSQL, KAFKA Sink connector and Rest Api
+In this tutorial, we'll see how to use KSQL to get data from joined Streams and create new topic with enriched data and write sink connector to send this data to Rest Api who send alert to whatsapp users numbers when:
 
 1 - one busNumber is arrived to one predefined bustop configured in Ktable.Exampe:users want to know when the bus is one Stop before their stop and receive alert from whatsapp to leave home and get this bus
 
@@ -88,4 +88,4 @@ namespace WebApiWhatsapp.Controllers
 ## Part 3 - Starting Streamsets pipeline to write streamns to kafka topic
 
 ### (see the [Pipeline tutorial](https://github.com/albertochong/PIPELINES-ETL-PROJECTS/blob/master/3%20-%20PIPELINE-LISBON-BUS-STATUS.md) for easy comphreension)
-* ![alt text](https://achong.blob.core.windows.net/gitimages/pipeline_Get_Lisbom_Bus_Status_to_Kafk.PNG)
+* ![alt text](https://photos.app.goo.gl/C2sGwkQJpNE5zpaK8)
