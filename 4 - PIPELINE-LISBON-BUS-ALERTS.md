@@ -1,5 +1,5 @@
-# Simple Pipeline using StreamSets Data Collector, Rest Api, Amazon S3, Azure Databricks
-Creating custom Kafka producers and consumers is often a tedious process that requires manual coding. In this tutorial, we'll see how to use StreamSets Data Collector to create data ingest pipelines to get data from Rest Api and write to Kafka using a Kafka Producer, and read from Kafka topic with Azure Databricks Spark to processing and store messages on Amazon S3.
+# Simple Pipeline using KSQL, KAFKA Sink connector and Rest Api
+In this tutorial, we'll see how to use KSQL to to get data from joined Streamns and create new topic with enriched data and write sink connector to send this data to Rest Api who send alert to whatsapp number when one bus is arrived to one predefined bustops store in Ktable .
 
 ### Prerequisites
 
