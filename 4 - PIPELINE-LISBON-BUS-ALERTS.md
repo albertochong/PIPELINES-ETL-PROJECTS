@@ -5,6 +5,8 @@ In this tutorial, we'll see how to use KSQL to to get data from joined Streamns 
 
 2 - speed from bus is above limit
 
+3 - bus status is not in movment
+
 ### Prerequisites
 
 * A working Confluent Kafka instance (see the [My Confluent Kafka tutorial](https://github.com/albertochong/AWS-KAFKA-CONFLUENT-PLATFORM) for easy local setup and topics creation).
