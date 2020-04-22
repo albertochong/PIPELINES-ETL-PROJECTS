@@ -11,6 +11,7 @@ In this tutorial, we'll see how to use KSQL to to get data from joined Streamns 
 
 * A working Confluent Kafka instance (see the [My Confluent Kafka tutorial](https://github.com/albertochong/AWS-KAFKA-CONFLUENT-PLATFORM) for easy local setup and topics creation).
 * c# Rest Api 
+* Starting streamsets pipeline to get data from Lisbon Bus Status Web Api 
 
 ## Part 1 - Create Web Api to send alerts to whatsapp numbers
 
@@ -75,10 +76,16 @@ namespace WebApiWhatsapp.Controllers
 
 ```
 ### Web Api published 
-![alt text](https://achong.blob.core.windows.net/gitimages/pipeline_Get_Lisbom_Bus_Status_to_Kafka.PNG)
+![alt text](https://achong.blob.core.windows.net/gitimages/pipeline_Get_Lisbom_Bus_Status_to_Kafk.PNG)
 
 
 ## Part 2 - KSQL to get streams
 
 ### Creating streams  from topic
 * NOT FINISHED
+
+
+## Part 3 - Starting Streamsets pipeline to write streamns to kafka topic
+
+### (see the [Pipeline tutorial](https://github.com/albertochong/PIPELINES-ETL-PROJECTS/blob/master/3%20-%20PIPELINE-LISBON-BUS-STATUS.md) for easy comphreension)
+* ![alt text](https://achong.blob.core.windows.net/gitimages/pipeline_Get_Lisbom_Bus_Status_to_Kafk.PNG)
