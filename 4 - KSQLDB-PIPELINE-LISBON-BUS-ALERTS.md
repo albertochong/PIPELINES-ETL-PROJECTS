@@ -121,3 +121,11 @@ CREATE STREAM buStatus_offline_Streams
 
 
 ## Part 4 - Sink HTTP Connector to send data to C# Rest Api
+CREATE SINK CONNECTOR Whatsapp_By_Twillio_sink WITH (
+  'connector.class' = 'io.confluent.connect.elasticsearch.ElasticsearchSinkConnector',
+  'key.converter'   = 'org.apache.kafka.connect.storage.StringConverter',
+  'topics'          = 'buStatus_offline_Streams',
+  'key.ignore'      = 'true',
+  'schema.ignore'   = 'true',
+  'type.name'       = '',
+  'connection.url'  = 'http://localhost:9200');
