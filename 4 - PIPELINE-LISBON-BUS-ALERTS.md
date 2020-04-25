@@ -88,7 +88,7 @@ bus status is not in movment;
 ## Part 2 - KSQL to get streams
 
 ### Creating streams from topic TpBusLisbonStatus
-* Streamns to get all data
+* Streams to get all data
 ```
 CREATE STREAM busLisbonStatus_streams(busNumber INTEGER, state VARCHAR, lastGpsTime VARCHAR,
                                       lastReportTime VARCHAR, lat DOUBLE, lng DOUBLE,
@@ -99,6 +99,7 @@ CREATE STREAM busLisbonStatus_streams(busNumber INTEGER, state VARCHAR, lastGpsT
 ```
 
 * Streams to get data when the Bus isn´t in movement
+```
 CREATE STREAM buStatus_offline_Streams
   WITH (PARTITIONS=3,
         VALUE_FORMAT='AVRO') AS
@@ -109,6 +110,10 @@ CREATE STREAM buStatus_offline_Streams
   FROM busLisbonStatus_streams
   where state ='off' or state ='Standby' or state ='Undefined' or state ='Unknown'
   PARTITION BY busNumber;
+ 
+ 
+ ```
+
 
 ## Part 3 - Starting Streamsets pipeline to write streamns to kafka topic
 
