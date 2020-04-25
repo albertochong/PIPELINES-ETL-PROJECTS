@@ -84,7 +84,7 @@ namespace WebApiWhatsapp.Controllers
 
 
 
-## Part 2 - KSQL to get streams
+## Part 2 - KSQLDB to get streams
 
 ### Creating streams from topic TpBusLisbonStatus
 * Streams to get all data
@@ -114,10 +114,10 @@ CREATE STREAM buStatus_offline_Streams
  ```
 
 
-## Part 3 - Starting Streamsets pipeline to write streamns to kafka topic
+## Part 3 - Starting Streamsets pipeline to write streams to kafka topic
 
 ### (see the [Pipeline tutorial](https://github.com/albertochong/PIPELINES-ETL-PROJECTS/blob/master/3%20-%20PIPELINE-LISBON-BUS-STATUS.md) for easy comphreension)
 ![alt text](https://achong.blob.core.windows.net/gitimages/pipepline_lisbon_bus_status_kafka.PNG)
 
 
-## Part 4 - Sink Connector to send data to C# Rest Api
+## Part 4 - Sink HTTP Connector to send data to C# Rest Api
