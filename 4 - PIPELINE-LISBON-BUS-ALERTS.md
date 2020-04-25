@@ -1,15 +1,18 @@
-# Simple Kappa Architecture Pipeline using KSQL, KAFKA Sink connector and Rest Api
-In this tutorial, we'll see how to use KSQL to get data from joined Streams and create new topic with enriched data and write sink connector to send this data to Rest Api who send alert to whatsapp users numbers when:
+# Simple Kappa Architecture Pipeline using KSQLDB, KAFKA Sink connector and Rest Api
+In this tutorial, we'll work with data came from https://carris.tecmic.com/see (is data about Buses in Lisbon Portuagl Area) and show how use KSQLDB to get data from joined Streams and create new topic with enriched data and write sink connector to send this data to Rest Api who send alert to whatsapp users numbers when:
 
-1 - one busNumber is arrived to one predefined bustop configured in Ktable.Exampe:users want to know when the bus is one Stop before their stop and receive alert from whatsapp to leave home and get this bus
 
-2 - speed from bus is above limit
+1 - bus status is not in movment;
 
-3 - bus status is not in movment
+2 - one busNumber is arrived to one predefined bustop configured in Ktable.Exampe:users want to know when the bus is one Stop before their stop and receive alert from whatsapp to leave home and get this bus
+
+3 - speed from bus is above limit
+
+
 
 ### Prerequisites
 
-* A working Confluent Kafka instance (see the [My Confluent Kafka tutorial](https://github.com/albertochong/AWS-KAFKA-CONFLUENT-PLATFORM) for easy local setup and topics creation).
+* A working Confluent Kafka instance (see the [My Confluent Kafka tutorial](https://github.com/albertochong/AWS-KAFKA-CONFLUENT-PLATFORM) for easy local setup and topics creation for this tuturial).
 * c# Rest Api 
 * Starting streamsets pipeline to get data from Lisbon Bus Status Web Api 
 
@@ -79,11 +82,30 @@ namespace WebApiWhatsapp.Controllers
 ![alt text](https://achong.blob.core.windows.net/gitimages/pipeline_Get_Lisbom_Bus_Status_to_Kafk.PNG)
 
 
+bus status is not in movment;
+
 ## Part 2 - KSQL to get streams
 
-### Creating streams  from topic
-* NOT FINISHED
+### Creating streams from topic TpBusLisbonStatus
+* Streamns to get all data
+CREATE STREAM busLisbonStatus_streams(busNumber INTEGER, state VARCHAR, lastGpsTime VARCHAR,
+                                      lastReportTime VARCHAR, lat DOUBLE, lng DOUBLE,
+                                      routeNumber VARCHAR, direction VARCHAR, plateNumber VARCHAR,
+                                      timeStamp VARCHAR, dataServico VARCHAR )
+                                      WITH (KAFKA_TOPIC='TpBusLisbonStatus', VALUE_FORMAT='JSON', KEY='busNumber',
+                                      partitions=3);
 
+* Streams to get data when the Bus isn´t in movement
+CREATE STREAM buStatus_offline_Streams
+  WITH (PARTITIONS=3,
+        VALUE_FORMAT='AVRO') AS
+  SELECT busNumber,
+         lat,
+         lng,
+         timeStamp
+  FROM busLisbonStatus_streams
+  where state ='off' or state ='Standby' or state ='Undefined' or state ='Unknown'
+  PARTITION BY busNumber;
 
 ## Part 3 - Starting Streamsets pipeline to write streamns to kafka topic
 
