@@ -83,7 +83,6 @@ namespace WebApiWhatsapp.Controllers
 ![alt text](https://achong.blob.core.windows.net/gitimages/pipeline_Get_Lisbom_Bus_Status_to_Kafk.PNG)
 
 
-bus status is not in movment;
 
 ## Part 2 - KSQL to get streams
 
@@ -120,3 +119,5 @@ CREATE STREAM buStatus_offline_Streams
 ### (see the [Pipeline tutorial](https://github.com/albertochong/PIPELINES-ETL-PROJECTS/blob/master/3%20-%20PIPELINE-LISBON-BUS-STATUS.md) for easy comphreension)
 ![alt text](https://achong.blob.core.windows.net/gitimages/pipepline_lisbon_bus_status_kafka.PNG)
 
+
+## Part 4 - Sink Connector to send data to C# Rest Api
