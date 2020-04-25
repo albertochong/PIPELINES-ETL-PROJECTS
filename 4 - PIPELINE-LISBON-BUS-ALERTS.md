@@ -12,8 +12,9 @@ In this tutorial, we'll work with data came from https://carris.tecmic.com/see (
 
 ### Prerequisites
 
-* A working Confluent Kafka instance (see the [My Confluent Kafka tutorial](https://github.com/albertochong/AWS-KAFKA-CONFLUENT-PLATFORM) for easy local setup and topics creation for this tuturial).
+* A working Confluent Kafka instance (see the [My Confluent Kafka tutorial](https://github.com/albertochong/AWS-KAFKA-CONFLUENT-PLATFORM) for easy local setup and topics creation for this tutorial).
 * c# Rest Api 
+* KSQLDB
 * Starting streamsets pipeline to get data from Lisbon Bus Status Web Api 
 
 ## Part 1 - Create Web Api to send alerts to whatsapp numbers
@@ -88,12 +89,14 @@ bus status is not in movment;
 
 ### Creating streams from topic TpBusLisbonStatus
 * Streamns to get all data
+```
 CREATE STREAM busLisbonStatus_streams(busNumber INTEGER, state VARCHAR, lastGpsTime VARCHAR,
                                       lastReportTime VARCHAR, lat DOUBLE, lng DOUBLE,
                                       routeNumber VARCHAR, direction VARCHAR, plateNumber VARCHAR,
                                       timeStamp VARCHAR, dataServico VARCHAR )
                                       WITH (KAFKA_TOPIC='TpBusLisbonStatus', VALUE_FORMAT='JSON', KEY='busNumber',
                                       partitions=3);
+```
 
 * Streams to get data when the Bus isn´t in movement
 CREATE STREAM buStatus_offline_Streams
