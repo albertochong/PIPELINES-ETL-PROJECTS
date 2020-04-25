@@ -36,10 +36,10 @@ SSH               TCP             22          Anywhere
   *  
   
 ## 3. Step: SPARK-PIPELINE-LISBON-BUS-ALERTS
-  * Simple Kappa Archiquecture Pipeline using StreamSets Data Collector, Rest Api, Amazon S3, Azure Databricks
+  * Simple Kappa Architecture Pipeline using StreamSets Data Collector, Rest Api, Amazon S3, Azure Databricks
   
 ## 4. Step : PIPELINE-LISBON-BUS-ALERTS 
-  * Simple Kappa Archiquecture  Pipeline using KSQL and rest API to send alerts to whatsapp
+  * Simple Kappa Architecture Pipeline using KSQL and rest API to send alerts to whatsapp
   
 ## 5. Step: Apache NIFI Installation and Configuration
   * 
