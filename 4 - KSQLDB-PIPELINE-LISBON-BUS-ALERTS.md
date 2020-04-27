@@ -84,7 +84,7 @@ namespace WebApiWhatsapp.Controllers
 
 
 
-## Part 2 - KSQLDB to get streams
+## Part 2 - KSQLDB to Get Streams
 
 ### Creating streams from topic TpBusLisbonStatus
 * Streams to get all data
@@ -122,19 +122,27 @@ CREATE STREAM buStatus_offline_Streams
 
 ## Part 4 - Sink HTTP Connector to send data to C# Rest Api
 ```
+1 - Download from https://www.confluent.io/hub/confluentinc/kafka-connect-http 
+
+2 - Put the Http connector downloaded above in the same folder as the Kafka Connect Http plugin
+    Should be <CONFLUENT_HOME>/shared/java
+
+3 - Open Ksql
 CREATE SINK CONNECTOR Whatsapp_By_Twillio_sink WITH 
 (
-  'topics' = "testAlertsSSE",
-  'tasks.max' =  '1',
-    "connector.class": "io.confluent.connect.http.HttpSinkConnector",
-    "http.api.url": "http://localhost:3344/receiveData",
-    "key.converter": "org.apache.kafka.connect.storage.StringConverter",
-    "header.converter": "org.apache.kafka.connect.storage.StringConverter",
-    "value.converter": "org.apache.kafka.connect.storage.StringConverter",
-    "confluent.topic.bootstrap.servers": "localhost:9092",
-    "confluent.topic.replication.factor": "1",
-    "reporter.bootstrap.servers": "localhost:9092",
-    "reporter.error.topic.replication.factor": "1",
-    "reporter.result.topic.replication.factor": "1"
-  
-  ```
+  'topics'                            = 'BUSTATUS_OFFLINE_STREAMS',
+  'tasks.max'                         =  '1',
+  'connector.class'                       = 'io.confluent.connect.http.HttpSinkConnector',
+  'http.api.url'                           = 'https://webapiwhatsapp.azurewebsites.net/ChongWhatsappApi/PostNewMessage',
+  'key.converter'                           = 'org.apache.kafka.connect.storage.StringConverter',
+  'header.converter'                        = 'org.apache.kafka.connect.storage.StringConverter',
+  'value.converter'                         = 'org.apache.kafka.connect.storage.StringConverter',
+  'confluent.topic.bootstrap.servers'       = 'ec2-18-217-55-153.us-east-2.compute.amazonaws.com:9092',
+  'confluent.topic.replication.factor'      = '1',
+  'reporter.bootstrap.servers'              = 'ec2-18-217-55-153.us-east-2.compute.amazonaws.com:9092',
+  'reporter.error.topic.replication.factor' = '1',
+  'reporter.result.topic.replication.factor'= '1'
+);
+
+```
+![alt text](https://achong.blob.core.windows.net/gitimages/Whatsapp_http_coonector.PNG)
