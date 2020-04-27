@@ -80,7 +80,7 @@ namespace WebApiWhatsapp.Controllers
 
 ```
 ### Web Api published 
-![alt text](https://achong.blob.core.windows.net/gitimages/pipeline_Get_Lisbom_Bus_Status_to_Kafk.PNG)
+![alt text](https://achong.blob.core.windows.net/gitimages/webapiWhatsapp.PNG)
 
 
 
