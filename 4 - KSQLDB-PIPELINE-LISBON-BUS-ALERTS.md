@@ -1,4 +1,4 @@
-# Simple Kappa Architecture Pipeline using KSQLDB, KAFKA Sink connector and Rest Api
+# Simple Kappa Architecture Pipeline using KSQLDB, KAFKA Http Sink connector and Rest Api
 In this tutorial, we'll work with data came from https://carris.tecmic.com/see (is data about Buses in Lisbon Portugal Area) and show how use KSQLDB to get data from joined Streams and create new topic with enriched data and write sink connector to send this data to Rest Api who send alert to whatsapp users numbers when:
 
 
@@ -13,8 +13,9 @@ In this tutorial, we'll work with data came from https://carris.tecmic.com/see (
 ### Prerequisites
 
 * A working Confluent Kafka instance (see the [My Confluent Kafka tutorial](https://github.com/albertochong/AWS-KAFKA-CONFLUENT-PLATFORM) for easy local setup and topics creation for this tutorial).
-* c# Rest Api 
+* C# Rest Api 
 * KSQLDB
+* Create Http Sink Connector
 * Starting streamsets pipeline to get data from Lisbon Bus Status Web Api 
 
 ## Part 1 - Create Web Api to send alerts to whatsapp numbers
@@ -113,14 +114,7 @@ CREATE STREAM buStatus_offline_Streams
  
  ```
 
-
-## Part 3 - Starting Streamsets pipeline to write streams to kafka topic
-
-### (see the [Pipeline tutorial](https://github.com/albertochong/PIPELINES-ETL-PROJECTS/blob/master/3%20-%20PIPELINE-LISBON-BUS-STATUS.md) for easy comphreension)
-![alt text](https://achong.blob.core.windows.net/gitimages/pipepline_lisbon_bus_status_kafka.PNG)
-
-
-## Part 4 - Sink HTTP Connector to send data to C# Rest Api
+## Part 3 - Sink HTTP Connector to send data to C# Rest Api
 ```
 1 - Download from https://www.confluent.io/hub/confluentinc/kafka-connect-http 
 
@@ -146,3 +140,9 @@ CREATE SINK CONNECTOR Whatsapp_By_Twillio_sink WITH
 
 ```
 ![alt text](https://achong.blob.core.windows.net/gitimages/Whatsapp_http_coonector.PNG)
+
+## Part 4 - Starting Streamsets pipeline to write streams to kafka topic
+
+### (see the [Pipeline tutorial](https://github.com/albertochong/PIPELINES-ETL-PROJECTS/blob/master/3%20-%20PIPELINE-LISBON-BUS-STATUS.md) for easy comphreension)
+![alt text](https://achong.blob.core.windows.net/gitimages/pipepline_lisbon_bus_status_kafka.PNG)
+
