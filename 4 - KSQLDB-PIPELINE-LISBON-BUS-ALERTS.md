@@ -141,6 +141,12 @@ CREATE SINK CONNECTOR Whatsapp_By_Twillio_sink WITH
 ```
 ![alt text](https://achong.blob.core.windows.net/gitimages/Whatsapp_http_coonector.PNG)
 
+![alt text](https://achong.blob.core.windows.net/gitimages/WHATSAPP_BY_TWILLIO_SINK_status.PNG)
+
+
+
+
+
 ## Part 4 - Starting Streamsets pipeline to write streams to kafka topic
 
 ### (see the [Pipeline tutorial](https://github.com/albertochong/PIPELINES-ETL-PROJECTS/blob/master/3%20-%20PIPELINE-LISBON-BUS-STATUS.md) for easy comphreension)
