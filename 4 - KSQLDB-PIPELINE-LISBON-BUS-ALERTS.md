@@ -130,6 +130,7 @@ emit changes;
 
 3 - Open Ksql
 
+*
 ```
 CREATE SINK CONNECTOR Whatsapp_By_Twillio_sink WITH 
 (
@@ -147,7 +148,7 @@ CREATE SINK CONNECTOR Whatsapp_By_Twillio_sink WITH
   'reporter.result.topic.replication.factor'= '1'
 );
 
-```
+*
 ```
 CREATE SINK CONNECTOR Whatsapp_By_Twillio_sink WITH 
 (
