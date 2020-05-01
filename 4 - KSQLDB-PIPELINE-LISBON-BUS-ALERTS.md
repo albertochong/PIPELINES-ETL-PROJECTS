@@ -100,7 +100,7 @@ CREATE STREAM busLisbonStatus_streams(busNumber INTEGER, state VARCHAR, lastGpsT
 
 * Streams to get data when the almost one bus is near from predefined user busStop by 1 KM 
 ```
-create stream IsNearMyStop_stream with(partitions = 1, VALUE_FORMAT='AVRO')
+create stream IsNearMyStop_stream with(partitions = 1, VALUE_FORMAT='JSON')
  AS
 select TIMESTAMPTOSTRING(ROWTIME, 'HH:mm', 'UTC+1')as time,
        busnumber,
