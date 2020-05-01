@@ -81,7 +81,7 @@ namespace WebApiWhatsapp.Controllers
 
 
 ```
-### Web Api published 
+### Web Api published on Azure
 ![alt text](https://achong.blob.core.windows.net/gitimages/webapiWhatsapp.PNG)
 
 
