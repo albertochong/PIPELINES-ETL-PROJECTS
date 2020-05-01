@@ -133,7 +133,7 @@ emit changes;
 
 * Sink connector to send message to Web Api and alert bus proximity
 ```
-CREATE SINK CONNECTOR  WHATSAPP_BY_TWILLIO_BUSNEARMYSTOP_SINK 
+CREATE SINK CONNECTOR  WHATSAPP_BY_TWILLIO_BUSNEARMYSTOP_SINK with
 (
   'topics'                            = 'ISNEARMYSTOP_STREAM',
   'tasks.max'                         =  '1',
