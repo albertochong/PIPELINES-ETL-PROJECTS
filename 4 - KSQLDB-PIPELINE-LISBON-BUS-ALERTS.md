@@ -85,7 +85,6 @@ namespace WebApiWhatsapp.Controllers
 ![alt text](https://achong.blob.core.windows.net/gitimages/webapiWhatsapp.PNG)
 
 
-
 ## Part 2 - KSQLDB to Get Streams
 
 ### Creating streams from topic TpBusLisbonStatus
@@ -118,7 +117,6 @@ where routenumber = '717' and
        CAST(GEO_DISTANCE(lat, lng, 38.761097, -9.157179, 'KM') AS double) < 1.3)
 emit changes;
  
-
 ```
 
 ## Part 3 - Sink HTTP Connector to send data to C# Rest Api
@@ -132,9 +130,9 @@ emit changes;
 
 *
 ```
-CREATE SINK CONNECTOR Whatsapp_By_Twillio_sink WITH 
+CREATE SINK CONNECTOR  WHATSAPP_BY_TWILLIO_BUSNEARMYSTOP_SINK 
 (
-  'topics'                            = 'BUSTATUS_OFFLINE_STREAMS',
+  'topics'                            = 'ISNEARMYSTOP_STREAM',
   'tasks.max'                         =  '1',
   'connector.class'                       = 'io.confluent.connect.http.HttpSinkConnector',
   'http.api.url'                           = 'https://webapiwhatsapp.azurewebsites.net/ChongWhatsappApi/PostNewMessage',
@@ -147,6 +145,8 @@ CREATE SINK CONNECTOR Whatsapp_By_Twillio_sink WITH
   'reporter.error.topic.replication.factor' = '1',
   'reporter.result.topic.replication.factor'= '1'
 );
+
+```
 
 *
 ```
@@ -170,10 +170,6 @@ CREATE SINK CONNECTOR Whatsapp_By_Twillio_sink WITH
 ![alt text](https://achong.blob.core.windows.net/gitimages/Whatsapp_http_coonector.PNG)
 
 ![alt text](https://achong.blob.core.windows.net/gitimages/WHATSAPP_BY_TWILLIO_SINK_status.PNG)
-
-
-
-
 
 ## Part 4 - Starting Streamsets pipeline to write streams to kafka topic
 
