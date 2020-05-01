@@ -120,6 +120,7 @@ emit changes;
 ```
 
 ## Part 3 - Sink HTTP Connector to send data to C# Rest Api
+*
 ```
 1 - Download from https://www.confluent.io/hub/confluentinc/kafka-connect-http 
 
@@ -127,6 +128,8 @@ emit changes;
     Should be <CONFLUENT_HOME>/shared/java
 
 3 - Open Ksql
+
+```
 
 *
 ```
