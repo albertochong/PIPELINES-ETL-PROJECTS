@@ -144,6 +144,8 @@ CREATE SINK CONNECTOR  WHATSAPP_BY_TWILLIO_BUSNEARMYSTOP_SINK with
   'value.converter'                         = 'org.apache.kafka.connect.storage.StringConverter',
   'confluent.topic.bootstrap.servers'       = 'ec2-18-217-55-153.us-east-2.compute.amazonaws.com:9092',
   'confluent.topic.replication.factor'      = '1',
+  'max.retries'                             = '10',
+  'confluent.license'                       = '',
   'reporter.bootstrap.servers'              = 'ec2-18-217-55-153.us-east-2.compute.amazonaws.com:9092',
   'reporter.error.topic.replication.factor' = '1',
   'reporter.result.topic.replication.factor'= '1'
@@ -173,6 +175,16 @@ CREATE SINK CONNECTOR Whatsapp_By_Twillio_sink WITH
 ![alt text](https://achong.blob.core.windows.net/gitimages/Whatsapp_http_coonector.PNG)
 
 ![alt text](https://achong.blob.core.windows.net/gitimages/WHATSAPP_BY_TWILLIO_SINK_status.PNG)
+
+
+* Check log error if exists errors
+```
+ confluent local log connect tail
+ OR
+ describe connector conn_name
+```
+
+
 
 ## Part 4 - Starting Streamsets pipeline to write streams to kafka topic
 
