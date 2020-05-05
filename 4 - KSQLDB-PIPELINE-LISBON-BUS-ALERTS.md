@@ -39,13 +39,17 @@ namespace WebApiWhatsapp.Controllers
     {
         [HttpPost]
         [Route("ChongWhatsappApi/PostNewMessage")]
-        public HttpResponseMessage PostNewMessage(string messagem)
+        public HttpResponseMessage PostNewMessage([FromBody] ISNEARMYSTOP_STREAM ISNEARMYSTOP_STREAM)
         {
-           
+            //if (!ModelState.IsValid)
+            //    return BadRequest("Invalid data.");
+
             HttpResponseMessage response = null;
 
-            const string accountSid = "your twillio account";
-            const string authToken = "your twillio token";
+            const string accountSid = "AC8195acfb522dc3ed922fa2acd004b918";
+            const string authToken = "8c302920c654880240eb12f3d952ed3e";
+
+            string msg = "Boa tarde, o autocarro número " + ISNEARMYSTOP_STREAM.BusNumber + " está a " + ISNEARMYSTOP_STREAM.DISTANCE_KM + " Km de distância da sua paragem.";
 
             try
             {
@@ -53,11 +57,11 @@ namespace WebApiWhatsapp.Controllers
 
                 var message = MessageResource.Create(
                     from: new Twilio.Types.PhoneNumber("whatsapp:+14155238886"),
-                    body: "Hello, there!",
-                    to: new Twilio.Types.PhoneNumber("whatsapp:+351964663133")
+                    body: msg,
+                    to: new Twilio.Types.PhoneNumber("whatsapp:+244933198143")
                 );
 
-                if (message.Sid != "")
+                if (message.ErrorMessage != "")
                 {
                     response = Request.CreateResponse(HttpStatusCode.OK);
                     response.Content = new StringContent("Mensagem enviada com sucesso", Encoding.UTF8, "application/json");
@@ -65,17 +69,34 @@ namespace WebApiWhatsapp.Controllers
                 else
                 {
                     response = Request.CreateResponse(HttpStatusCode.NoContent);
-                    response.Content = new StringContent("Mensagem não enviada com sucesso", Encoding.UTF8, "application/json");
+                    response.Content = new StringContent("Mensagem não enviada com sucesso" + message.ErrorMessage, Encoding.UTF8, "application/json");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 response = Request.CreateResponse(HttpStatusCode.InternalServerError);
-                response.Content = new StringContent("Ocorreu um erro no servidor", Encoding.UTF8, "application/json");
+                response.Content = new StringContent("Ocorreu um erro no servidor " + ex.Message, Encoding.UTF8, "application/json");
             }
 
             return response;
         }
+    }
+
+    public class ISNEARMYSTOP_STREAM
+    {
+        public Int64 ROWTIME { get; set; }
+        public string ROWKEY { get; set; }
+        public string TIME { get; set; }
+        public int BusNumber { get; set; }
+        public string State { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
+        public string DISTANCE_KM { get; set; }
+        public string ROUTENUMBER { get; set; }
+        public string DIRECTION { get; set; }
+
+
+
     }
 }
 
