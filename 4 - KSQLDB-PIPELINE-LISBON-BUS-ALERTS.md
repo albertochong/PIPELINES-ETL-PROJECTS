@@ -46,8 +46,8 @@ namespace WebApiWhatsapp.Controllers
 
             HttpResponseMessage response = null;
 
-            const string accountSid = "AC8195acfb522dc3ed922fa2acd004b918";
-            const string authToken = "8c302920c654880240eb12f3d952ed3e";
+            const string accountSid = "your_account";
+            const string authToken = "your_token";
 
             string msg = "Boa tarde, o autocarro número " + ISNEARMYSTOP_STREAM.BusNumber + " está a " + ISNEARMYSTOP_STREAM.DISTANCE_KM + " Km de distância da sua paragem.";
 
