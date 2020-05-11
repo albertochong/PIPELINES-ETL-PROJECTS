@@ -132,8 +132,8 @@ select TIMESTAMPTOSTRING(ROWTIME, 'HH:mm', 'UTC+1')as time,
        routenumber, direction
 from busLisbonStatus_streams 
 where routenumber = '717' and 
-      ((direction = 'ASC' and (TIMESTAMPTOSTRING(ROWTIME, 'HH:mm', 'UTC+1') > '07:30' and TIMESTAMPTOSTRING(ROWTIME, 'HH:mm', 'UTC+1') < '08:15')) or 
-       (Direction = 'DESC' and TIMESTAMPTOSTRING(ROWTIME, 'HH:mm', 'UTC+1') > '17:00' and TIMESTAMPTOSTRING(ROWTIME, 'HH:mm', 'UTC+1') < '18:00')) and
+      ((direction = 'ASC' and (TIMESTAMPTOSTRING(ROWTIME, 'HH:mm', 'UTC+1') > '19:30' and TIMESTAMPTOSTRING(ROWTIME, 'HH:mm', 'UTC+1') < '20:00')) or 
+       (Direction = 'DESC' and TIMESTAMPTOSTRING(ROWTIME, 'HH:mm', 'UTC+1') > '19:30' and TIMESTAMPTOSTRING(ROWTIME, 'HH:mm', 'UTC+1') < '20:00')) and
       (CAST(GEO_DISTANCE(lat, lng, 38.761097, -9.157179, 'KM') AS double) >= 1.0 and
        CAST(GEO_DISTANCE(lat, lng, 38.761097, -9.157179, 'KM') AS double) < 1.3)
 emit changes;
