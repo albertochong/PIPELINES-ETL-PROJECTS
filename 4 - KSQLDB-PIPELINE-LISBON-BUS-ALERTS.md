@@ -1,5 +1,5 @@
-# Simple Kappa Architecture Pipeline using KSQLDB, KAFKA Http Sink connector and Rest Api
-In this tutorial, I'll work with data came from https://carris.tecmic.com/see (is data about Buses in Lisbon Portugal Area) and show how use KSQLDB to get data from joined Streams and create new topic with enriched data and write Http sink connector to send this data to Web Api who send alert to whatsapp users numbers when:
+# Simple Kappa Architecture Pipeline using Streamsets, KSQLDB, KAFKA Http Sink connector and Rest Api
+In this tutorial, I'll work with data came from https://carris.tecmic.com/see (is data about Buses in Lisbon Portugal Area) and write streams to kafka and show how use KSQLDB to get data from Streams and create new topic with enriched data and write Http sink connector to send this data to Web Api who send alert to whatsapp users numbers when:
 
 1 - one bus Number is near 1 KM by the user predefined Bus Stop and route and he can know that´s time to get bus
 
@@ -214,3 +214,4 @@ CREATE SINK CONNECTOR Whatsapp_By_Twillio_sink WITH
 Checking video demo
 
 <video src="https://vimeo.com/417672143" width="320" height="200" controls preload></video>
+[![Alt text](https://img.youtube.com/vi/VID/0.jpg)](https://www.youtube.com/watch?v=VID)
