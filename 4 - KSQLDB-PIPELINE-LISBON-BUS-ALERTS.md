@@ -220,7 +220,7 @@ Checking video demo
 <div align="center">
       <a href="https://www.youtube.com/watch?v=StTqXEQ2l-Y">
      <img 
-      src="https://achong.blob.core.windows.net/gitimages/pipepline_lisbon_bus_status_kafka.PNG" 
+      src="https://achong.blob.core.windows.net/gitimages/WHATSAPP_BY_TWILLIO_SINK_status.PNG" 
       alt="Everything Is AWESOME" 
       style="width:100%;">
       </a>
