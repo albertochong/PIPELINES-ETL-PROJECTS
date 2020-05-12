@@ -213,4 +213,6 @@ CREATE SINK CONNECTOR Whatsapp_By_Twillio_sink WITH
 
 Checking video demo
 
-[![Little red riding hood](http://i.imgur.com/7YTMFQp.png)](https://vimeo.com/417672143" "Little red riding hood - Click to Watch!")
+
+
+[![Little red riding hood](https://achong.blob.core.windows.net/gitimages/ksql.PNG](https://vimeo.com/417672143 "Little red riding hood - Click to Watch!")
