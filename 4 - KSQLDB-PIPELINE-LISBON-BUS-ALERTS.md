@@ -4,11 +4,10 @@ In this tutorial, I'll work with data came from https://carris.tecmic.com/see (i
 1 - one bus Number is near 1 KM by the user predefined Bus Stop and route and he can know that´s time to get bus
 
 
-2 - bus status is not in movment;
+2 - bus status is not in movment(not finish yet);
 
 
-3 - speed from bus is above limit
-
+3 - speed from bus is above limit(not finish yet)
 
 
 ### Prerequisites
@@ -94,8 +93,6 @@ namespace WebApiWhatsapp.Controllers
         public string DISTANCE_KM { get; set; }
         public string ROUTENUMBER { get; set; }
         public string DIRECTION { get; set; }
-
-
 
     }
 }
@@ -212,3 +209,7 @@ CREATE SINK CONNECTOR Whatsapp_By_Twillio_sink WITH
 ### (see the [Pipeline tutorial](https://github.com/albertochong/PIPELINES-ETL-PROJECTS/blob/master/3%20-%20PIPELINE-LISBON-BUS-STATUS.md) for easy comphreension)
 ![alt text](https://achong.blob.core.windows.net/gitimages/pipepline_lisbon_bus_status_kafka.PNG)
 
+
+
+Checking video demo
+![alt text](https://vimeo.com/417672143)
