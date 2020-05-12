@@ -212,4 +212,5 @@ CREATE SINK CONNECTOR Whatsapp_By_Twillio_sink WITH
 
 
 Checking video demo
-![alt text](https://vimeo.com/417672143)
+
+<video src="https://vimeo.com/417672143" width="320" height="200" controls preload></video>
