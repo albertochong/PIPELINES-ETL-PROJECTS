@@ -215,3 +215,6 @@ Checking video demo
 
 <video src="https://vimeo.com/417672143" width="320" height="200" controls preload></video>
 [![Alt text](https://img.youtube.com/vi/VID/0.jpg)](https://www.youtube.com/watch?v=VID)
+
+
+[![Little red riding hood](http://i.imgur.com/7YTMFQp.png)](https://vimeo.com/3514904 "Little red riding hood - Click to Watch!")
