@@ -192,8 +192,6 @@ CREATE SINK CONNECTOR Whatsapp_By_Twillio_sink WITH
 ```
 ![alt text](https://achong.blob.core.windows.net/gitimages/Whatsapp_http_coonector.PNG)
 
-![alt text](https://achong.blob.core.windows.net/gitimages/WHATSAPP_BY_TWILLIO_SINK_status.PNG)
-
 
 * Check log error if exists errors
 ```
@@ -201,7 +199,6 @@ CREATE SINK CONNECTOR Whatsapp_By_Twillio_sink WITH
  OR
  describe connector conn_name
 ```
-
 
 
 ## Part 4 - Starting Streamsets pipeline to write streams to kafka topic
@@ -213,12 +210,8 @@ CREATE SINK CONNECTOR Whatsapp_By_Twillio_sink WITH
 
 Checking video demo
 
-
-
-[![Little red riding hood](https://achong.blob.core.windows.net/gitimages/ksql.PNG](https://vimeo.com/417672143 "Little red riding hood - Click to Watch!")
-
 <div align="center">
-      <a href="https://www.youtube.com/watch?v=StTqXEQ2l-Y">
+      <a href="https://vimeo.com/417672143">
      <img 
       src="https://achong.blob.core.windows.net/gitimages/WHATSAPP_BY_TWILLIO_SINK_status.PNG" 
       alt="Everything Is AWESOME" 
