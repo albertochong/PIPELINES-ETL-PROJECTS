@@ -42,7 +42,7 @@ SSH               TCP             22          Anywhere
   * Simple Kappa Architecture Pipeline using KSQL and rest API to send alerts to whatsapp
   
 ## 5. Step: Apache NIFI Installation and Configuration
-  * 
+  * Install and Configure NIFI 
   
 ### 5.1 Step: Working with NIFI
   *  
