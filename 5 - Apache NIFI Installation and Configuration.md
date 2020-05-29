@@ -13,43 +13,34 @@ An easy to use, powerful, and reliable system to process and distribute data.
 
 ### Run in terminal
 
-* Download streamsets under home/user directory. Check if java 1.8 is installed, if not you should install first
+* Download Apache NIFI under home/user directory. Check if java 1.8 is installed, if not you should install first
 ```bash
-sudo wget https://archives.streamsets.com/datacollector/3.13.0/tarball/streamsets-datacollector-core-3.13.0.tgz
+sudo wget https://downloads.apache.org/nifi/1.11.4/nifi-1.11.4-bin.zip
 ```
 
-* unpack files
+* unzip files
 ```bash
-sudo tar xvzf streamsets-datacollector-core-3.13.0.tgz 
+unzip nifi-1.11.4-bin.zip
 ```
 
-* move to folder opt/streamsets and change owner to group and user hadoop
+* move to folder opt/nifi and change owner to group and user hadoop
 ```bash
-sudo mv streamsets-datacollector-3.13.0/  /opt/streamsets
+sudo mv nifi-1.11.4/  /opt/nifi
 ```
 
-* To start in background streamsets go to instalation folder. We can put as servcice 
+* Go to <HIFI_HOME>/bin folder and edit file nifi-env.sh.Uncommnet java location tou your location
 ```bash
-nohup bin/streamsets dc &
+nano nifi-env.sh
 ```
 
-* You will probably het this error
+* Starting NIFI under <HIFI_HOME>/bin folder
 ```bash
-Configuration of maximum open file limit is too low: 1024 (expected at least 32768). Please consult https://goo.gl/6dmjXd
-```
-
-* To solve this problemn open the file and add 2 lines and then reboot the server and start steamset again
-```bash
-sudo nano /etc/security/limits.conf
---add this two lines
-*      soft    nofile  32768
-*      hard    nofile  32768
-
+./nifi.sh run
 ```
 
 ## My environment 
-###  http://ec2-3-19-103-254.us-east-2.compute.amazonaws.com:18630/
+###  http://ec2-3-19-103-254.us-east-2.compute.amazonaws.com:8080/nifi
 
-![alt text](https://achong.blob.core.windows.net/gitimages/streamsetpanel.PNG)
+![alt text](https://achong.blob.core.windows.net/gitimages/nifi_presentation.PNG)
 
 * If you are interested to try this tool email me to beto.chong@gmail.com and I grant access and we can share pipelines and knwoledge
