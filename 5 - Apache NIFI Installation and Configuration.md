@@ -5,10 +5,10 @@
 An easy to use, powerful, and reliable system to process and distribute data.
 
 ## Reference 
-###  https://streamsets.com/
+###  https://nifi.apache.org/
 
 
-![alt text](https://achong.blob.core.windows.net/gitimages/StreamSets.PNG)
+![alt text](https://achong.blob.core.windows.net/gitimages/nifi_whatis.PNG)
 
 
 ### Run in terminal
