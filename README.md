@@ -49,5 +49,6 @@ SSH               TCP             22          Anywhere
   * 
   *
   
-
+## 6. Step: Elaticsearch Installation and Configuration
+  * Install and Configure Elasticsearch 
 
