@@ -9,9 +9,6 @@ Search and analyze your data in real time.
 ###  https://www.elastic.co/
 
 
-![alt text](https://achong.blob.core.windows.net/gitimages/nifi_whatis.PNG)
-
-
 ### Run in terminal
 
 * Download Apache NIFI under home/user directory. Check if java 1.8 is installed, if not you should install first
