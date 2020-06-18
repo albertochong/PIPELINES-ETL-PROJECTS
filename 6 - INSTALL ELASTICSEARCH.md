@@ -11,30 +11,38 @@ Search and analyze your data in real time.
 
 ### Run in terminal
 
+OBS: check if java is installed,if not you should install java 1.8
+
 * add an user
 ```bash
-
+sudo adduser user_elasticsearch
 ```
 
-* unzip files
+* create folder to install elasticsearch
 ```bash
-unzip nifi-1.11.4-bin.zip
+sudo mkdir -p /opt/elasticsearch/node1 
 ```
 
-* move to folder opt/nifi and change owner to group and user hadoop
+* give previlege to the new user we create above
 ```bash
-sudo mv nifi-1.11.4/  /opt/nifi
+sudo chown -R user_elasticsearch /opt/elasticsearch
 ```
 
-* Go to <HIFI_HOME>/bin folder and edit file nifi-env.sh.Uncommnet java location tou your location
+* lets download Elasticsearch, unpack files and start 
 ```bash
-nano nifi-env.sh
+sudo su - user_elasticsearch
+cd /opt/elasticsearch/node1
+ wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.4.2.tar.gz
+ tar -xzf elasticsearch-6.4.2.tar.gz
+bin/elasticsearch
 ```
 
-* Starting NIFI under <HIFI_HOME>/bin folder
+* checking cluster
 ```bash
-./nifi.sh run
+curl localhost:9200
 ```
+![alt text](https://achong.blob.core.windows.net/gitimages/elastic_install.PNG)
+
 
 ## My environment 
 ###  http://ec2-3-19-103-254.us-east-2.compute.amazonaws.com:8080/nifi
