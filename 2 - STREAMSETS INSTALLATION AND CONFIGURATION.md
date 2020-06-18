@@ -23,7 +23,7 @@ sudo wget https://archives.streamsets.com/datacollector/3.13.0/tarball/streamset
 sudo tar xvzf streamsets-datacollector-core-3.13.0.tgz 
 ```
 
-* move to folder opt/streamsets and change owner to group and user hadoop
+* move to folder opt/streamsets 
 ```bash
 sudo mv streamsets-datacollector-3.13.0/  /opt/streamsets
 ```
