@@ -43,10 +43,3 @@ curl localhost:9200
 ```
 ![alt text](https://achong.blob.core.windows.net/gitimages/elastic_install.PNG)
 
-
-## My environment 
-###  http://ec2-3-19-103-254.us-east-2.compute.amazonaws.com:8080/nifi
-
-![alt text](https://achong.blob.core.windows.net/gitimages/nifi_presentation.PNG)
-
-* If you are interested to try this tool email me to beto.chong@gmail.com and I grant access and we can share pipelines and knwoledge
