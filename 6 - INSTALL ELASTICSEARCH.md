@@ -1,12 +1,12 @@
 
 
-![alt text](https://achong.blob.core.windows.net/gitimages/nifi.PNG)
+![alt text](https://achong.blob.core.windows.net/gitimages/elastic stack.PNG)
 
-# NIFI Installation and Configuration
-An easy to use, powerful, and reliable system to process and distribute data.
+# ELASTICSEARCH Installation and Configuration
+Search and analyze your data in real time.
 
 ## Reference 
-###  https://nifi.apache.org/
+###  https://www.elastic.co/
 
 
 ![alt text](https://achong.blob.core.windows.net/gitimages/nifi_whatis.PNG)
