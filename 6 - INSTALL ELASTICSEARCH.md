@@ -1,6 +1,6 @@
 
 
-![alt text](https://achong.blob.core.windows.net/gitimages/elastic stack.PNG)
+![alt text](https://achong.blob.core.windows.net/gitimages/elastic_stack.PNG)
 
 # ELASTICSEARCH Installation and Configuration
 Search and analyze your data in real time.
@@ -11,9 +11,9 @@ Search and analyze your data in real time.
 
 ### Run in terminal
 
-* Download Apache NIFI under home/user directory. Check if java 1.8 is installed, if not you should install first
+* add an user
 ```bash
-sudo wget https://downloads.apache.org/nifi/1.11.4/nifi-1.11.4-bin.zip
+
 ```
 
 * unzip files
