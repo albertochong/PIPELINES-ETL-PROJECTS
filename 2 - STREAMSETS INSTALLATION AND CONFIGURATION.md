@@ -48,7 +48,7 @@ sudo nano /etc/security/limits.conf
 ```
 
 ## My environment 
-###  http://ec2-3-19-103-254.us-east-2.compute.amazonaws.com:18630/
+###  http://ec2-3-132-147-38.us-east-2.compute.amazonaws.com:18630/
 
 ![alt text](https://achong.blob.core.windows.net/gitimages/streamsetpanel.PNG)
 
