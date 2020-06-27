@@ -84,6 +84,13 @@ sudo systemctl start elasticsearch
 sudo systemctl status elasticsearch
 ```
 
+* checking elasticsearch configuration and uncomment lines
+```bash
+sudo nano /etc/elasticsearch/elasticsearch.yml
+network.host: ec2-4-34-44-8.us-east-2.compute.amazonaws.com
+http.port: 9200
+```
+
 * checking log
 ```bash
 sudo less /var/log/elasticsearch/elasticsearch.log
@@ -110,4 +117,19 @@ sudo systemctl enable kibana
 ```bash
 sudo systemctl start kibana
 ```
+
+* checking log
+```bash
+sudo less /var/log/messages
+```
+
+* checking kibana configuration and uncomment lines
+```bash
+sudo nano etc/kibana/kibana.yml
+server.port: 5601
+server.host: "ec2-4-34-44-8.us-east-2.compute.amazonaws.com"
+elasticsearch.hosts: ["http://ec2-4-34-44-8.us-east-2.compute.amazonaws.com:9200"]
+```
+
+
 
