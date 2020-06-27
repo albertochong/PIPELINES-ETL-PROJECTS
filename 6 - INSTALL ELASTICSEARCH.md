@@ -131,5 +131,8 @@ server.host: "ec2-4-34-44-8.us-east-2.compute.amazonaws.com"
 elasticsearch.hosts: ["http://ec2-4-34-44-8.us-east-2.compute.amazonaws.com:9200"]
 ```
 
-
-
+* Kibana web
+```bash
+http://ec2-4-34-44-8.us-east-2.compute.amazonaws.com:5601
+```
+![alt text](https://achong.blob.core.windows.net/gitimages/kibana.PNG)
