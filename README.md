@@ -51,6 +51,11 @@ SSH               TCP             22          Anywhere
   
 ## 6. Step: Elaticsearch Installation and Configuration
   * Install and Configure Elasticsearch 
+
+### 6.1 Step: Using Kibana
+  *  
+  * 
+  *
   
 ## 7. Step: Cassandra Installation and Configuration
   * Install and Configure Cassandra 
