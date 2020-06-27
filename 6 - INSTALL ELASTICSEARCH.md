@@ -44,11 +44,11 @@ curl localhost:9200
 ![alt text](https://achong.blob.core.windows.net/gitimages/elastic_install.PNG)
 
 
-### Method 2 to install with Yum Repo and run as service
+### Method 2 to install with Yum Repo and run as service with aws user ec2-user
 
 * create a repository and add this content
 ```bash
-nano /etc/yum.repos.d/elastic_stack.repo
+sudo nano /etc/yum.repos.d/elastic_stack.repo
 [elastic_stack-6.x]
 name=Elastic Stack repository for 6.x packages
 baseurl=https://artifacts.elastic.co/packages/6.x/yum
@@ -66,27 +66,27 @@ sudo yum install java-1.8.0-openjdk elasticsearch -y
 
 * Reloading
 ```bash
-ssystemctl daemon-reload
+sudo systemctl daemon-reload
 ```
 
 * Enable the service
 ```bash
-systemctl enable elasticsearch
+sudo systemctl enable elasticsearch
 ```
 
 * Starting the service
 ```bash
-systemctl start elasticsearch
+sudo systemctl start elasticsearch
 ```
 
 * checking status the service
 ```bash
-systemctl status elasticsearch
+sudo systemctl status elasticsearch
 ```
 
 * checking log
 ```bash
-less  sudo less /var/log/elasticsearch/elasticsearch.log
+sudo less /var/log/elasticsearch/elasticsearch.log
 ```
 
 * checking cluster
@@ -94,5 +94,20 @@ less  sudo less /var/log/elasticsearch/elasticsearch.log
 curl localhost:9200
 ```
 
+## Using Kibana
 
+* Installation
+```bash
+sudo yum install kibana -y
+```
+
+* Enable the service
+```bash
+sudo systemctl enable kibana
+```
+
+* Start the service
+```bash
+sudo systemctl start kibana
+```
 
