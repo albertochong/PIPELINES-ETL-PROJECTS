@@ -44,7 +44,7 @@ curl localhost:9200
 ![alt text](https://achong.blob.core.windows.net/gitimages/elastic_install.PNG)
 
 
-### Method 2 to install with Yum Repo
+### Method 2 to install with Yum Repo and run as service
 
 * create a repository and add this content
 ```bash
@@ -57,40 +57,42 @@ gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
 enabled=1
 autorefresh=1
 type=rpm-md
-``
-
+```
 
 * Installing Elasticsearch
 ```bash
 sudo yum install java-1.8.0-openjdk elasticsearch -y
 ```
 
- Reloading
+* Reloading
 ```bash
 ssystemctl daemon-reload
 ```
 
-Enable the service
+* Enable the service
 ```bash
 systemctl enable elasticsearch
 ```
 
-Starting the service
+* Starting the service
 ```bash
 systemctl start elasticsearch
 ```
 
-checking status the service
+* checking status the service
 ```bash
 systemctl status elasticsearch
 ```
 
-checking lig
+* checking log
 ```bash
 less  sudo less /var/log/elasticsearch/elasticsearch.log
 ```
 
-
+* checking cluster
+```bash
+curl localhost:9200
+```
 
 
 
