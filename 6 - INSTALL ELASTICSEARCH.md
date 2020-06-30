@@ -141,6 +141,6 @@ http://ec2-4-34-44-8.us-east-2.compute.amazonaws.com:5601
 ## Working with Indexes
 
 * checking kibana configuration and uncomment lines
-```bash
+
 ![alt text](https://achong.blob.core.windows.net/gitimages/indexes.PNG)
-```
+
