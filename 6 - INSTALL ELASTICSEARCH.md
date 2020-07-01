@@ -143,4 +143,11 @@ http://ec2-4-34-44-8.us-east-2.compute.amazonaws.com:5601
 * checking kibana configuration and uncomment lines
 
 ![alt text](https://achong.blob.core.windows.net/gitimages/indexes.PNG)
+![alt text](https://achong.blob.core.windows.net/gitimages/index_template.PNG)
+
+
+* Some operations
+![alt text](https://achong.blob.core.windows.net/gitimages/indexe_operation.PNG)
+
+
 
