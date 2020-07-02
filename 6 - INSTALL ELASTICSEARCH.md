@@ -140,7 +140,7 @@ http://ec2-4-34-44-8.us-east-2.compute.amazonaws.com:5601
 
 ## Working with Indexes
 
-* checking kibana configuration and uncomment lines
+* Indexes creation
 
 ![alt text](https://achong.blob.core.windows.net/gitimages/indexes.PNG)
 ![alt text](https://achong.blob.core.windows.net/gitimages/index_template.PNG)
@@ -148,6 +148,17 @@ http://ec2-4-34-44-8.us-east-2.compute.amazonaws.com:5601
 
 * Some operations
 ![alt text](https://achong.blob.core.windows.net/gitimages/indexe_operation.PNG)
+
+## Working with Documents
+
+* Documents Creation
+
+![alt text](https://achong.blob.core.windows.net/gitimages/documents.PNG)
+![alt text](https://achong.blob.core.windows.net/gitimages/documents1.PNG)
+
+
+* Some operations
+![alt text]()
 
 
 
