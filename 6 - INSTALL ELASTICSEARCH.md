@@ -145,7 +145,6 @@ http://ec2-4-34-44-8.us-east-2.compute.amazonaws.com:5601
 ![alt text](https://achong.blob.core.windows.net/gitimages/indexes.PNG)
 ![alt text](https://achong.blob.core.windows.net/gitimages/index_template.PNG)
 
-
 * Some operations
 ![alt text](https://achong.blob.core.windows.net/gitimages/indexe_operation.PNG)
 
@@ -157,8 +156,15 @@ http://ec2-4-34-44-8.us-east-2.compute.amazonaws.com:5601
 ![alt text](https://achong.blob.core.windows.net/gitimages/documents1.PNG)
 
 
+## Elasticsearch CAT APIs
+
+* CAT Apis:
+
+![alt text](https://achong.blob.core.windows.net/gitimages/cat.PNG)
+
 * Some operations
-![alt text]()
+![alt text](https://achong.blob.core.windows.net/gitimages/cat_list_Apis.PNG)
+![alt text](https://achong.blob.core.windows.net/gitimages/cat_allocation.PNG)
 
 
 
