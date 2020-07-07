@@ -173,6 +173,9 @@ http://ec2-4-34-44-8.us-east-2.compute.amazonaws.com:5601
 * Search Apis:
 
 ![alt text](https://achong.blob.core.windows.net/gitimages/search_api.PNG)
+![alt text](https://achong.blob.core.windows.net/gitimages/search_query_dsl_api.PNG)
+![alt text](https://achong.blob.core.windows.net/gitimages/search_query_context_api.PNG)
+
 
 
 * Some operations
