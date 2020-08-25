@@ -125,7 +125,7 @@ sudo less /var/log/messages
 
 * checking kibana configuration and uncomment lines
 ```bash
-sudo nano etc/kibana/kibana.yml
+sudo nano /etc/kibana/kibana.yml
 server.port: 5601
 server.host: "ec2-4-34-44-8.us-east-2.compute.amazonaws.com"
 elasticsearch.hosts: ["http://ec2-4-34-44-8.us-east-2.compute.amazonaws.com:9200"]
