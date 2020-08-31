@@ -69,22 +69,7 @@ sudo yum install java-1.8.0-openjdk elasticsearch -y
 sudo systemctl daemon-reload
 ```
 
-* Enable the service on 3 machines
-```bash
-sudo systemctl enable elasticsearch
-```
-
-* Starting the service on 3 machines
-```bash
-sudo systemctl start elasticsearch
-```
-
-* checking he service status on 3 machines
-```bash
-sudo systemctl status elasticsearch
-```
-
-* checking elasticsearch configuration on master node and define some configurations proerties
+* checking elasticsearch configuration on master node and define some configurations properties
 ```bash
 sudo nano /etc/elasticsearch/elasticsearch.yml
 
@@ -112,6 +97,30 @@ discovery.zen.ping.unicast.hosts: ["ip_master_node","ip_data_node1","ip_data_nod
 
 ```
 
+* Adjusting JVM heap size for up to 50% of your RAM but no more than 32GB (due to Java pointer inefficiency in larger heaps).
+```bash
+sudo nano /etc/elasticsearch/jvm.options
+
+-Xms2g
+-Xmx2g
+```
+
+
+
+* Enable the service on 3 machines
+```bash
+sudo systemctl enable elasticsearch
+```
+
+* Starting the service on 3 machines
+```bash
+sudo systemctl start elasticsearch
+```
+
+* checking he service status on 3 machines
+```bash
+sudo systemctl status elasticsearch
+```
 
 * checking log
 ```bash
