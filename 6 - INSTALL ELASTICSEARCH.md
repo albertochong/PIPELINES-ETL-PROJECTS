@@ -44,9 +44,9 @@ curl localhost:9200
 ![alt text](https://achong.blob.core.windows.net/gitimages/elastic_install.PNG)
 
 
-### Method 2 to install with Yum Repo and run as service with aws user ec2-user
+### Method 2 to install as Cluster with 1 master node and 2 data Nodes with Yum Repo and run as service with aws user ec2-user
 
-* create a repository and add this content
+* create a repository on 3 machines and add this content
 ```bash
 sudo nano /etc/yum.repos.d/elastic_stack.repo
 [elastic_stack-6.x]
@@ -59,37 +59,59 @@ autorefresh=1
 type=rpm-md
 ```
 
-* Installing Elasticsearch
+* Installing java and Elasticsearch on 3 machines
 ```bash
 sudo yum install java-1.8.0-openjdk elasticsearch -y
 ```
 
-* Reloading
+* Reloading on 3 machines
 ```bash
 sudo systemctl daemon-reload
 ```
 
-* Enable the service
+* Enable the service on 3 machines
 ```bash
 sudo systemctl enable elasticsearch
 ```
 
-* Starting the service
+* Starting the service on 3 machines
 ```bash
 sudo systemctl start elasticsearch
 ```
 
-* checking status the service
+* checking he service status on 3 machines
 ```bash
 sudo systemctl status elasticsearch
 ```
 
-* checking elasticsearch configuration and uncomment lines
+* checking elasticsearch configuration on master node and define some configurations proerties
 ```bash
 sudo nano /etc/elasticsearch/elasticsearch.yml
-network.host: ec2-4-34-44-8.us-east-2.compute.amazonaws.com
+
+cluster.name: srvChongElastic
+node.name: srvChongElasticMaster
+node.master: true
+node.data: false
+network.host: your_ip
 http.port: 9200
+discovery.zen.ping.unicast.hosts: ["ip_master_node","ip_data_node1","ip_data_node2"]
+
 ```
+
+* checking elasticsearch configuration on each data node and define some configurations proerties
+```bash
+sudo nano /etc/elasticsearch/elasticsearch.yml
+
+cluster.name: srvChongElastic
+node.name: srvChongElasticdataNode1
+node.master: false
+node.data: true
+network.host: your_ip
+http.port: 9200
+discovery.zen.ping.unicast.hosts: ["ip_master_node","ip_data_node1","ip_data_node2"]
+
+```
+
 
 * checking log
 ```bash
