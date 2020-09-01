@@ -70,6 +70,7 @@ sudo systemctl daemon-reload
 ```
 
 * checking elasticsearch configuration on master node and define some configurations properties
+where _local_ refers to Any loopback addresses on the system and _site_ refers to Any site-local addresses on the system e.g. IP address of the server.
 ```bash
 sudo nano /etc/elasticsearch/elasticsearch.yml
 
@@ -77,13 +78,13 @@ cluster.name: srvChongElastic
 node.name: srvChongElasticMaster
 node.master: true
 node.data: false
-network.host: your_ip
+network.host: [_local_,_site_] 
 http.port: 9200
-discovery.zen.ping.unicast.hosts: ["ip_master_node","ip_data_node1","ip_data_node2"]
 
 ```
 
 * checking elasticsearch configuration on each data node and define some configurations proerties
+where _local_ refers to Any loopback addresses on the system and _site_ refers to Any site-local addresses on the system e.g. IP address of the server.
 ```bash
 sudo nano /etc/elasticsearch/elasticsearch.yml
 
@@ -91,18 +92,32 @@ cluster.name: srvChongElastic
 node.name: srvChongElasticdataNode1
 node.master: false
 node.data: true
-network.host: your_ip
+network.host: [_local_,_site_]
 http.port: 9200
-discovery.zen.ping.unicast.hosts: ["ip_master_node","ip_data_node1","ip_data_node2"]
+discovery.zen.ping.unicast.hosts: ["ip_master_node"]
 
 ```
 
-* Adjusting JVM heap size for up to 50% of your RAM but no more than 32GB (due to Java pointer inefficiency in larger heaps).
+* Adjusting JVM heap size for up to 50% of your RAM but no more than 32GB (due to Java pointer inefficiency in larger heaps) on 3 machines.
 ```bash
 sudo nano /etc/elasticsearch/jvm.options
 
 -Xms2g
 -Xmx2g
+```
+
+* Increasing on 3 machines open file descriptor limit.Elasticsearch makes use of a large amount of file descriptors, you must ensure the defined limit is enough otherwise you might end up losing data.
+```bash
+sudo nano /etc/security/limits.conf
+
+- nofile 65536
+```
+
+* Disable Swapping on 3 machines
+```bash
+sudo nano /etc/elasticsearch/jvm.options
+
+bootstrap.memory_lock: true
 ```
 
 
@@ -138,6 +153,17 @@ curl localhost:9200
 sudo yum install kibana -y
 ```
 
+* checking kibana configuration and uncomment lines
+```bash
+
+sudo nano /etc/kibana/kibana.yml
+
+server.port: 5601
+server.host: "your_ip_public"
+elasticsearch.hosts: ["ip_master_node", "ip_datanode1", "ip_datanode2"]
+```
+
+
 * Enable the service
 ```bash
 sudo systemctl enable kibana
@@ -151,14 +177,6 @@ sudo systemctl start kibana
 * checking log
 ```bash
 sudo less /var/log/messages
-```
-
-* checking kibana configuration and uncomment lines
-```bash
-sudo nano /etc/kibana/kibana.yml
-server.port: 5601
-server.host: "ec2-4-34-44-8.us-east-2.compute.amazonaws.com"
-elasticsearch.hosts: ["http://ec2-4-34-44-8.us-east-2.compute.amazonaws.com:9200"]
 ```
 
 * Kibana web
