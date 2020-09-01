@@ -106,7 +106,6 @@ sudo nano /etc/elasticsearch/jvm.options
 ```
 
 
-
 * Enable the service on 3 machines
 ```bash
 sudo systemctl enable elasticsearch
