@@ -44,7 +44,7 @@ curl localhost:9200
 ![alt text](https://achong.blob.core.windows.net/gitimages/elastic_install.PNG)
 
 
-### Method 2 to install as Cluster with 1 master node and 2 data Nodes with Yum Repo and run as service with aws user ec2-user
+### Method 2 to install as Cluster with 1 master node and 2 data Nodes with Yum Repo and run as service with aws Linux machine and user ec2-user
 
 * create a repository on 3 machines and add this content
 ```bash
@@ -78,6 +78,7 @@ cluster.name: srvChongElastic
 node.name: srvChongElasticMaster
 node.master: true
 node.data: false
+bootstrap.memory_lock: true
 network.host: [_local_,_site_] 
 http.port: 9200
 
@@ -92,6 +93,7 @@ cluster.name: srvChongElastic
 node.name: srvChongElasticdataNode1
 node.master: false
 node.data: true
+bootstrap.memory_lock: true
 network.host: [_local_,_site_]
 http.port: 9200
 discovery.zen.ping.unicast.hosts: ["ip_master_node"]
@@ -113,11 +115,17 @@ sudo nano /etc/security/limits.conf
 - nofile 65536
 ```
 
-* Disable Swapping on 3 machines
+* Disable Swapping on 3 machines.go to the file service and add LimitMEMLOCK=infinity.Save and close and reload
 ```bash
-sudo nano /etc/elasticsearch/jvm.options
+sudo nano /usr/lib/systemd/system/elasticsearch.service
 
-bootstrap.memory_lock: true
+[Service]
+LimitMEMLOCK=infinity
+
+****** Save and close ******
+
+sudo systemctl daemon-reload
+
 ```
 
 
