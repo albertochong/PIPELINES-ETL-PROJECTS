@@ -122,7 +122,6 @@ sudo nano /usr/lib/systemd/system/elasticsearch.service
 [Service]
 LimitMEMLOCK=infinity
 
-****** Save and close ******
 
 * Elasticsearch uses a mmapfs directory by default to store its indices. 
 Check virtual memory and increase
@@ -168,6 +167,16 @@ sudo less /var/log/elasticsearch/elasticsearch.log
 * checking cluster
 ```bash
 curl localhost:9200
+```
+
+* checking lincence
+```bash
+curl localhost:9200/_license/trial_status
+```
+
+* start your trial
+```bash
+curl -X POST localhost:9200/_license/start_trial?acknowledge=true
 ```
 
 ## Using Kibana
