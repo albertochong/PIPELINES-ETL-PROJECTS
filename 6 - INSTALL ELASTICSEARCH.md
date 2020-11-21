@@ -9,7 +9,7 @@ Search and analyze your data in real time.
 ###  https://www.elastic.co/
 
 
-### Method 1 to install with tar.gz
+### Method 1 to install with tar.gz on Red hat linux 8
 
 OBS: check if java is installed,if not you should install java 1.8
 
@@ -81,6 +81,9 @@ node.data: false
 bootstrap.memory_lock: true
 network.host: [_local_,_site_] 
 http.port: 9200
+#Security
+xpack.security.enabled: true
+xpack.security.authc.api_key.enabled: true
 
 ```
 
@@ -97,7 +100,9 @@ bootstrap.memory_lock: true
 network.host: [_local_,_site_]
 http.port: 9200
 discovery.zen.ping.unicast.hosts: ["ip_master_node"]
-
+#Security
+xpack.security.enabled: true
+xpack.security.authc.api_key.enabled: true
 ```
 
 * Adjusting JVM heap size for up to 50% of your RAM but no more than 32GB (due to Java pointer inefficiency in larger heaps) on 3 machines.
@@ -143,6 +148,24 @@ sudo systemctl daemon-reload
 
 ```
 
+* On each node configure TLS
+```bash
+go to /usr/share/elasticsearch and run
+bin/elasticsearch-certutil cert -out /etc/elasticsearch//elastic-certificates.p12 -pass ""
+```
+
+* Go back to elasticsearch.yml anda dd
+```bash
+xpack.security.transport.ssl.enabled: true
+xpack.security.transport.ssl.verification_mode: certificate
+xpack.security.transport.ssl.keystore.path: elastic-certificates.p12
+xpack.security.transport.ssl.truststore.path: elastic-certificates.p12
+```
+
+* On master node generate password s for system users
+```bash
+bin/elasticsearch-setup-passwords auto
+```
 
 * Enable the service on 3 machines
 ```bash
