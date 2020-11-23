@@ -49,19 +49,29 @@ curl localhost:9200
 * create a repository on 3 machines and add this content
 ```bash
 sudo nano /etc/yum.repos.d/elastic_stack.repo
-[elastic_stack-6.x]
-name=Elastic Stack repository for 6.x packages
-baseurl=https://artifacts.elastic.co/packages/6.x/yum
+[elasticsearch]
+name=Elasticsearch repository for 7.x packages
+baseurl=https://artifacts.elastic.co/packages/7.x/yum
+gpgcheck=1
+gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
+enabled=0
+autorefresh=1
+type=rpm-md
+
+[kibana-7.x]
+name=Kibana repository for 7.x packages
+baseurl=https://artifacts.elastic.co/packages/7.x/yum
 gpgcheck=1
 gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
 enabled=1
 autorefresh=1
 type=rpm-md
+
 ```
 
 * Installing java and Elasticsearch on 3 machines
 ```bash
-sudo yum install java-1.8.0-openjdk elasticsearch -y
+sudo yum install java-1.8.0-openjdk elasticsearch kibana -y
 ```
 
 * Reloading on 3 machines
@@ -152,8 +162,9 @@ sudo nano /etc/security/limits.conf
 
 ```
 
+* Reloading on 3 machines
+```bash
 sudo systemctl daemon-reload
-
 ```
 
 * On each node configure TLS
