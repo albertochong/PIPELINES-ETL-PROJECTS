@@ -107,6 +107,10 @@ discovery.zen.ping.unicast.hosts: ["ip_master_node"]
 #Security
 xpack.security.enabled: true
 xpack.security.authc.api_key.enabled: true
+xpack.security.transport.ssl.enabled: true
+xpack.security.transport.ssl.verification_mode: certificate
+xpack.security.transport.ssl.keystore.path: elastic-certificates.p12
+xpack.security.transport.ssl.truststore.path: elastic-certificates.p12
 ```
 
 * Adjusting JVM heap size for up to 50% of your RAM but no more than 32GB (due to Java pointer inefficiency in larger heaps) on 3 machines.
@@ -158,19 +162,6 @@ go to /usr/share/elasticsearch and run
 bin/elasticsearch-certutil cert -out /etc/elasticsearch//elastic-certificates.p12 -pass ""
 ```
 
-* Go back to elasticsearch.yml anda dd
-```bash
-xpack.security.transport.ssl.enabled: true
-xpack.security.transport.ssl.verification_mode: certificate
-xpack.security.transport.ssl.keystore.path: elastic-certificates.p12
-xpack.security.transport.ssl.truststore.path: elastic-certificates.p12
-```
-
-* On master node generate password s for system users
-```bash
-bin/elasticsearch-setup-passwords auto
-```
-
 * Enable the service on 3 machines
 ```bash
 sudo systemctl enable elasticsearch
@@ -184,6 +175,11 @@ sudo systemctl start elasticsearch
 * checking he service status on 3 machines
 ```bash
 sudo systemctl status elasticsearch
+```
+
+* On master node generate password s for system users
+```bash
+bin/elasticsearch-setup-passwords auto
 ```
 
 * checking log
