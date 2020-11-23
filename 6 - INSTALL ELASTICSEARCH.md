@@ -93,7 +93,7 @@ network.host: [_local_,_site_]
 http.port: 9200
 #Security
 xpack.security.enabled: true
-xpack.security.authc.api_key.enabled: true
+#xpack.security.authc.api_key.enabled: true
 xpack.security.transport.ssl.enabled: true
 xpack.security.transport.ssl.verification_mode: certificate
 xpack.security.transport.ssl.keystore.path: elastic-certificates.p12
@@ -116,7 +116,7 @@ http.port: 9200
 discovery.zen.ping.unicast.hosts: ["ip_master_node"]
 #Security
 xpack.security.enabled: true
-xpack.security.authc.api_key.enabled: true
+#xpack.security.authc.api_key.enabled: true
 xpack.security.transport.ssl.enabled: true
 xpack.security.transport.ssl.verification_mode: certificate
 xpack.security.transport.ssl.keystore.path: elastic-certificates.p12
