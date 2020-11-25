@@ -178,9 +178,10 @@ sudo systemctl daemon-reload
 ```
 
 * On each node configure TLS.Dont forget give rigth permission to the certicates ex chomd 777
+Or give permission to user elasticsearch : chown root:elastisearch /etc/elasticsearch/elastic-certificates.p12
 ```bash
 go to /usr/share/elasticsearch and run
-bin/elasticsearch-certutil cert -out /etc/elasticsearch//elastic-certificates.p12 -pass ""
+bin/elasticsearch-certutil cert -out /etc/elasticsearch/elastic-certificates.p12 -pass ""
 ```
 
 * Enable the service on 3 machines
