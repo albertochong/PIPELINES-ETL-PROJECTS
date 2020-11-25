@@ -44,7 +44,7 @@ curl localhost:9200
 ![alt text](https://achong.blob.core.windows.net/gitimages/elastic_install.PNG)
 
 
-### Method 2 to install as Cluster with 1 master node and 2 data Nodes with Yum Repo and run as service with aws Linux machine and user ec2-user
+### Method 2 to install as Cluster with 1 master node and 2 data Nodes with Yum Repo and run as service with aws Read Hat Linux 8 machine and user ec2-user
 
 * create a repository on 3 machines and add this content
 ```bash
@@ -77,6 +77,21 @@ sudo yum install java-1.8.0-openjdk elasticsearch kibana -y
 * Reloading on 3 machines
 ```bash
 sudo systemctl daemon-reload
+```
+
+* Add internal and external ip n hosta
+```bash
+nano /etc/hosts
+# external ips
+34.68.243.71            nodemaster              masternode.chong.com
+34.71.126.7             datanode1               datanode1.chong.com
+35.193.136.17           datanode2               datanode2.chong.com
+
+# internal ips
+34.68.243.71            nodemaster              masternode.chong.com
+34.71.126.7             datanode1               datanode1.chong.com
+35.193.136.17           datanode2               datanode2.chong.com
+
 ```
 
 * checking elasticsearch configuration on master node and define some configurations properties
