@@ -82,11 +82,6 @@ sudo systemctl daemon-reload
 * Add internal and external ip n hosta
 ```bash
 nano /etc/hosts
-# external ips
-34.68.243.71            nodemaster              masternode.chong.com
-34.71.126.7             datanode1               datanode1.chong.com
-35.193.136.17           datanode2               datanode2.chong.com
-
 # internal ips
 34.68.243.71            nodemaster              masternode.chong.com
 34.71.126.7             datanode1               datanode1.chong.com
@@ -182,7 +177,7 @@ sudo nano /etc/security/limits.conf
 sudo systemctl daemon-reload
 ```
 
-* On each node configure TLS
+* On each node configure TLS.Dont forget give rigth permission to the certicates ex chomd 777
 ```bash
 go to /usr/share/elasticsearch and run
 bin/elasticsearch-certutil cert -out /etc/elasticsearch//elastic-certificates.p12 -pass ""
