@@ -258,7 +258,8 @@ sudo systemctl start kibana
 
 * checking log
 ```bash
-sudo less /var/log/messages
+#sudo less /var/log/messages
+tail -300f /var/log/messages
 ```
 
 * Kibana web
