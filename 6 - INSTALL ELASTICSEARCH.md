@@ -188,7 +188,7 @@ sudo systemctl start elasticsearch
 sudo systemctl status elasticsearch
 ```
 
-* On master node generate password s for system users
+* On master node generate random password s for system users or interative
 ```bash
 bin/elasticsearch-setup-passwords auto
 ```
