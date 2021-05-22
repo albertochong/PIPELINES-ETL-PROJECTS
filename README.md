@@ -32,8 +32,6 @@ SSH               TCP             22          Anywhere
   
 ### 2.1 Step: Working with STREAMSETS
   * Create new user form based 
-  * 
-  *  
   
 ## 3. Step: SPARK-PIPELINE-LISBON-BUS-ALERTS
   * Simple Kappa Architecture Pipeline using StreamSets Data Collector, Rest Api, Amazon S3, Azure Databricks
@@ -48,7 +46,6 @@ SSH               TCP             22          Anywhere
   * Install and Configure Elasticsearch 
   *  Using Kibana
   *  Working with Indexes
-  *
   
 ## 7. Step: Cassandra Installation and Configuration
   * Install and Configure Cassandra 
