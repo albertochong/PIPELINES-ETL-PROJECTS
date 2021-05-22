@@ -44,11 +44,6 @@ SSH               TCP             22          Anywhere
 ## 5. Step: Apache NIFI Installation and Configuration
   * Install and Configure NIFI 
   
-### 5.1 Step: Working with NIFI
-  *  
-  * 
-  *
-  
 ## 6. Step: Elaticsearch Installation and Configuration
   * Install and Configure Elasticsearch 
   *  Using Kibana
